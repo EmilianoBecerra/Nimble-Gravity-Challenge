@@ -1,0 +1,30 @@
+:root {
+  --font-family-title: 'Playfair Display', serif;
+  --font-family-subtitle: 'Inter', sans-serif;
+  --bg-color: #2d1a47;
+  --button-color: #e8a317;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  padding: 4px;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  color: white;
+}
