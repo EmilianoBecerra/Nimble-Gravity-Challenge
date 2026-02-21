@@ -1,0 +1,10 @@
+main {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://cdn.prod.website-files.com/686f8b48c59e46ab4c4351f0/686fd96a768b506db8406110_bg_careers-p-2000.avif");
+  border-radius: 8px;
+}

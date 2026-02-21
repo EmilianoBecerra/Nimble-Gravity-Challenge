@@ -3,6 +3,8 @@
   --font-family-subtitle: 'Inter', sans-serif;
   --bg-color: #2d1a47;
   --button-color: #e8a317;
+  --secondary-bg-color: #44286d;
+  --error-color:#ff0000;
 }
 
 * {

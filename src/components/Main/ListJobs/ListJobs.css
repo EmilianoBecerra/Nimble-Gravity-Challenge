@@ -1,0 +1,78 @@
+.list-jobs {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 5px;
+}
+
+.job {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  font-family: var(--font-family-subtitle);
+  height: auto;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.9px);
+  -webkit-backdrop-filter: blur(8.9px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  font-weight: bold;
+}
+
+.job p {
+  margin: 4px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: baseline;
+}
+
+.input-repository {
+  font-size: 15px;
+  margin: 3px;
+  color: white;
+  outline: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  background-color: #2d1a47;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--button-color);
+  color: black;
+  font-weight: 700;
+  letter-spacing: 1px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-family: var(--font-family-subtitle);
+  transition: opacity 0.2s;
+  height: 35px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.input-group button:hover {
+  opacity: 0.85;
+}
