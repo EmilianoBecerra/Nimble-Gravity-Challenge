@@ -11,9 +11,11 @@ function App() {
     <div className='principal-page'>
       <Header />
       {
-        email !== "" ? <Main email={email}/> : <Login  setEmail={setEmail}/>
+        email !== "" ? 
+          <Main email={email} /> 
+          : 
+          <Login setEmail={setEmail} />
       }
-      
       <Footer />
     </div>
   )

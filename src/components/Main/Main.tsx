@@ -4,6 +4,7 @@ import { ListJobs } from "./ListJobs/ListJobs";
 import { Loading } from "../Loading/Loading";
 import type { Jobs, User } from "../../types";
 import { ErrorCard } from "../Error/ErrorCard";
+import { fetchCandidateData } from "../../services/api";
 
 export function Main({ email }: { email: string }) {
   const [user, setUser] = useState<User | undefined>();
@@ -14,20 +15,9 @@ export function Main({ email }: { email: string }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [userRes, jobsRes] = await Promise.all([
-          fetch(`${import.meta.env.VITE_BASE_URL}/api/candidate/get-by-email?email=${email}`),
-          fetch(`${import.meta.env.VITE_BASE_URL}/api/jobs/get-list`)
-        ]);
-        if (!userRes.ok) throw new Error(`Error al obtener Usuario: ${userRes.status}`);
-        if (!jobsRes.ok) throw new Error(`Error al obtener listas de trabajo: ${jobsRes.status}`);
-
-        const [userData, jobsList] = await Promise.all([
-          userRes.json(),
-          jobsRes.json()
-        ])
-
-        setUser(userData);
-        setJobs(jobsList);
+        const { user, jobs } = await fetchCandidateData(email);
+        setUser(user);
+        setJobs(jobs);
       } catch (error) {
         console.error(error);
         setError(true);
@@ -42,12 +32,16 @@ export function Main({ email }: { email: string }) {
     return <ErrorCard />
   }
 
+  if (isLoading) {
+    return <Loading />
+  }
+
   return (
     <main>
-      {
-        isLoading ? <Loading /> :
-          <ListJobs list={jobs} user={user} />
-      }
+      <ListJobs
+        list={jobs}
+        user={user}
+      />
     </main>
   )
 }

@@ -1,7 +1,7 @@
 footer { 
   bottom: 0;
+  font-family: var(--font-family-subtitle);
+  padding: 22px;
   text-align: center;
   width: 100%;
-  padding: 22px;
-  font-family: var(--font-family-subtitle);
 }
