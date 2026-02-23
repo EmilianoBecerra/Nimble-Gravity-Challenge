@@ -17,6 +17,19 @@ Aplicación React que permite a candidatos ver posiciones abiertas y enviar su p
 - Manejo de errores de red con pantalla de error y botón de reintento.
 - Feedback visual en el botón de postulación (enviando / postulado / reintentar).
 
+## Setup
+
+Clonar el repositorio e instalar dependencias:
+
+    npm install
+    npm run dev
+
+## Variables de entorno
+
+Crear un archivo `.env` en la raíz del proyecto:
+
+    VITE_BASE_URL=https://tu-api-url
+
 ## Estructura del proyecto
 
     src/
@@ -28,5 +41,7 @@ Aplicación React que permite a candidatos ver posiciones abiertas y enviar su p
     │   │   └── ListJobs/  listado de posiciones y postulación
     │   ├── Loading/       skeleton cards
     │   └── Error/         pantalla de error con retry
+    ├── services/
+    │   └── api.ts         llamadas a la API (fetchCandidateData, applyToJob)
     ├── types.ts           interfaces User y Jobs
     └── App.tsx            manejo de estado de sesión (email)
